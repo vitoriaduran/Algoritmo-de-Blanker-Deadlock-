@@ -3,4 +3,70 @@ Script started on 2026-11-10 12:24:19-03:00 [TERM="xterm-256color" TTY="/dev/pts
 [?2004lTue Nov 10 12:24:21 -03 2026
 [?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ whoami
 [?2004lgabyv
-[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/User
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ pws[Kd
+[?2004l/mnt/c/Users/gabyv/vgjda2
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ git add .
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ git commit -m ""a"d"i"c"i"o"n"a"n"d"o" "e"s"t"r"u"t"r"a"s"[1P"[1P"[1P"[1P"t"u"r"a"s" "i" "[1P"n"i"c"i"a"i"s" "d"o" "[1P"[1P"[1P"a"[1P"d"a" "i"m"p"l"e"m"e"n"t"a"ç"a"[1P"ã"o"[C
+[?2004l[main d987307] adicionando estruturas iniciais da implementação
+ 2 files changed, 156 insertions(+)
+ create mode 100644 evidencias.log
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ got[K[Kit push origin main
+[?2004lEnumerating objects: 6, done.
+Counting objects:  16% (1/6)Counting objects:  33% (2/6)Counting objects:  50% (3/6)Counting objects:  66% (4/6)Counting objects:  83% (5/6)Counting objects: 100% (6/6)Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects:  25% (1/4)Compressing objects:  50% (2/4)Compressing objects:  75% (3/4)Compressing objects: 100% (4/4)Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)Writing objects:  50% (2/4)Writing objects:  75% (3/4)Writing objects: 100% (4/4)Writing objects: 100% (4/4), 2.01 KiB | 43.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/vitoriaduran/Algoritmo-de-Blanker-Deadlock-
+   4cf2a7b..d987307  main -> main
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-10 12:25:16-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-10 14:49:34-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="172" LINES="14"]
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ date[[K
+[?2004lTue Nov 10 14:49:38 -03 2026
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ wgi[K[Khoami
+[?2004lgabyv
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ pwd
+[?2004l/mnt/c/Users/gabyv/vgjda2
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > customer.txt[27m
+[7m7,5,3[27m
+[7m3,2,2[27m
+[7m9,0,2[27m
+[7m2,2,2[27m
+[7m4,3,3[27m
+[7mEOF[27m[A[A[A[A[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > customer.txt
+7,5,3
+3,2,2
+9,0,2
+2,2,2
+4,3,3
+EOF7[K
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > commands.txt[27m
+[7mRQ 0 0 2 1[27m
+[7mRL 0 0 1 1[27m
+[7m*[27m
+[7mEOF[27m[A[A[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > commands.txt
+RQ 0 0 2 1
+RL 0 0 1 1
+*
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -pedantic -O2 -o banker banker.c
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
+[?2004l=== TESTANDO PARTE 1 E PARTE 2 ===
+[1] Lendo customer.txt...
+    -> Sucesso! 5 clientes lidos.
+[2] Lendo commands.txt...
+    -> Sucesso! 3 comandos lidos.
+
+--- Resumo dos Comandos Reconhecidos ---
+Linha 1: Comando RQ | Cliente: 0 | Recursos: 0 2 1
+Linha 2: Comando RL | Cliente: 0 | Recursos: 0 1 1
+Linha 3: Comando '*'
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7m./banker 10 5[27m./banker 10 5
+[?2004l=== TESTANDO PARTE 1 E PARTE 2 ===
+[1] Lendo customer.txt...
+Erro: customer.txt linha 1: 3 coluna(s) encontrada(s), mas foram informados 2 recurso(s)
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/g
