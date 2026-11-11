@@ -409,7 +409,8 @@ static void ler_comandos(void) {
     fechar_entrada(); 
 }
 
-//Algoritmo de Banker (Segurança)
+//ALGORITMO DE BANKER  (Segurança)
+
 static void inicializa_banco(void) {
     const size_t celulas = (size_t)banco.num_clientes * (size_t)banco.num_recursos;
     banco.alocacao =  aloca_zero(celulas, sizeof(int));
@@ -540,5 +541,158 @@ static void executa_requisicao(FILE *f, int c, const int *requisicao) {
     imprime_unido(f, requisicao);
     fputs(" was denied because result in an unsafe state\n", f);
 }
+
+
+//EXECUÇÃO DE COMANDOS E FORMATAÇÃO DE SAÍDA
+
+//alinha o cabeçalho
+static void imprime_com_preenchimento(FILE *f, const int *v, int largura) {
+    int impressos = imprime_espacado(f, v);
+
+    if (impressos < largura){
+
+        fprintf(f, "%*s", largura - impressos, "");
+    }
+}
+
+//imprime a tabeça de estado completa do banco e alinha "available"
+static void imprime_estado(FILE *f) {
+    int calc_w1 = 2 *banco.num_recursos;
+    int calc_w2 = 2 *banco.num_recursos;
+
+    int w1;
+    if(calc_w1 > LARGURA_MIN_COL1){
+        w1 = calc_w1;
+    }else{
+        w1 = LARGURA_MIN_COL1;
+
+    }
+
+    int w2;
+    if (calc_w2 > LARGURA_MIN_COL2) {
+        w2 = calc_w2;
+    }else{
+        w2 = LARGURA_MIN_COL2;
+    }
+    fprintf(f, "%-*s|   %-*s|   NEED\n", w1, "MAXIMUM", w2, "ALLOCATION");
+
+    for (int i = 0; i < banco.num_clientes; i++) {
+
+        imprime_com_preenchimento(f, obter_linha(banco.maximo, i), w1);
+        fputs("|   ", f);
+
+        imprime_com_preenchimento(f, obter_linha(banco.alocacao, i), w2);
+        fputs("|   ", f);
+
+        imprime_espacado(f, obter_linha(banco.necessidade, i));
+        fputc('\n', f);
+    }
+
+    fputs("AVAILABLE ", f);
+    imprime_espacado(f, banco.disponivel);
+    fputc('\n', f);
+
+}
+
+//Processa o comando RL, Checa se o cliente realmente possui os recursos que quer liberar e atualiza as matrizes.
+static void executa_liberacao(FILE *f, int c, const int *liberacao) {
+
+    const int m = banco.num_recursos;
+    int *necessidade = obter_linha(banco.necessidade, c);
+    int *alocacao = obter_linha(banco.alocacao, c);
+
+    //Valida se a liberação não ultrapassa o que está alocado atualmente
+    for (int j = 0; j < m; j++) {
+        if (liberacao[j] > alocacao[j]) {
+            fprintf(f, "The customer %d release ", c);
+            imprime_unido(f, liberacao);
+            fputs(" was denied because exceed its allocation\n", f);
+            return;
+
+        }
+    }
+
+    //Executa a liberação dos recursos
+    for (int j = 0; j < m; j++) {
+
+        banco.disponivel[j] += liberacao[j];
+        alocacao[j] -= liberacao[j];
+        necessidade[j] += liberacao[j];
+    }
+
+    fprintf(f, "Release from customer %d the resources ", c);
+    imprime_unido(f, liberacao);
+    fputc('\n', f);
+}
+
+
+int main(int argc, char **argv) {
+    // Registra a limpeza automatica de memoria e arquivos ao sair
+    atexit(limpa_recursos);
+
+    unlink(ARQUIVO_RESULTADO);
+
+    if (argc < 2) {
+        morrer("numero de argumentos incorreto: informe o numero de instancias "
+               "de cada tipo de recurso (ex.: %s 10 5 7)", argv[0]);
+    }
+
+    // O numero de recursos e determinado pela quantidade de argumentos na CLI
+    banco.num_recursos = argc - 1;
+    banco.disponivel = aloca_zero((size_t)banco.num_recursos, sizeof(int));
+
+    //le e valida as instancias de cada recurso informadas na linha de comando
+    for (int j = 0; j < banco.num_recursos; j++){
+        if (converte_nao_negativo(argv[j + 1], strlen(argv[j + 1]), &banco.disponivel[j]) != 0) {
+
+            morrer("argumento %d invalido '%s': o numero de instancias deve ser " "um inteiro nao negativo", j + 1, argv[j + 1]);
+        }
+    }
+
+    // Leitura e validacao dos arquivos de entrada
+    ler_clientes();     
+    ler_comandos();      
+    inicializa_banco(); 
+
+    //abre o arquivo result.txt para escrita da saida
+    arquivo_saida = fopen(ARQUIVO_RESULTADO, "w");
+    if (!arquivo_saida) {
+
+        morrer("nao foi possivel criar '%s': %s", ARQUIVO_RESULTADO, strerror(errno));
+    }
+
+    //processa o lote de comandos lidos do commands.txt
+    for (size_t k = 0; k < num_comandos; k++){
+        const comando_t *cmd = &comandos[k];
+
+        switch (cmd->tipo) {
+        case TIPO_RQ:
+            executa_requisicao(arquivo_saida, cmd->cliente, cmd->quantidade);
+            break;
+
+        case TIPO_RL:
+            executa_liberacao(arquivo_saida, cmd->cliente, cmd->quantidade);
+            break;
+
+        case TIPO_ESTADO:
+            imprime_estado(arquivo_saida);
+            break;
+        }
+    }
+
+    //garante que o buffer do arquivo foi descarregado e fechado sem erros
+    {
+        FILE *f = arquivo_saida;
+        arquivo_saida = NULL;
+
+        if (ferror(f) || fclose(f) != 0) {
+            morrer("falha ao escrever '%s'", ARQUIVO_RESULTADO);
+        }
+    }
+
+    return EXIT_SUCCESS;
+}
+
+
 
 

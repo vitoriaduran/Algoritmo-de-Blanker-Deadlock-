@@ -193,3 +193,99 @@ Allocate to customer 0 the resources 1 0 2
 [?2004lexit
 
 Script done on 2026-11-11 14:54:03-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-11 16:45:28-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="182" LINES="12"]
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ date
+[?2004lWed Nov 11 16:45:30 -03 2026
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ whoami
+[?2004lgabyv
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ pa[Kwd
+[?2004l/mnt/c/Users/gabyv/vgjda2
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ V[K[7mcat << 'EOF' > customer.txt[27m
+[7m7,5,3[27m
+[7m3,2,2[27m
+[7m9,0,2[27m
+[7m2,2,2[27m
+[7m4,3,3[27m
+[7mEOF[27m[A[A[A[A[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > customer.txt
+7,5,3
+3,2,2
+9,0,2
+2,2,2
+4,3,3
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [H[2J]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > commands.txt[27m
+[7mRQ 0 0 2 1[27m
+[7mRQ 2 3 0 2[27m
+[7mRQ 1 2 0 0[27m
+[7mRQ 4 0 0 2[27m
+[7mRL 0 0 1 1[27m
+[7mRQ 3 2 1 1[27m
+[7m*[27m
+[7mRQ 4 4 0 0[27m
+[7mRQ 1 1 0 2[27m
+[7mRQ 0 0 2 0[27m
+[7mRQ 2 0 1 0[27m
+[7mEOF[27m[H[2J]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > commands.txt
+RQ 0 0 2 1
+RQ 2 3 0 2
+RQ 1 2 0 0
+RQ 4 0 0 2
+RL 0 0 1 1
+RQ 3 2 1 1
+*
+RQ 4 4 0 0
+RQ 1 1 0 2
+RQ 0 0 2 0
+RQ 2 0 1 0
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make clean
+[?2004lrm -f banker *.o
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -pedantic -O2 -o banker banker.c
+[01m[Kbanker.c:549:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kimprime_unido[m[K’
+  549 | static void [01;31m[Kimprime_unido[m[K(FILE *f, const int *v) {
+      |             [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:472:13:[m[K [01;36m[Knote: [m[Kprevious definition of ‘[01m[Kimprime_unido[m[K’ with type ‘[01m[Kvoid(FILE *, const int *)[m[K’
+  472 | static void [01;36m[Kimprime_unido[m[K(FILE *f, const int *v) {
+      |             [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:562:12:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kimprime_espacado[m[K’
+  562 | static int [01;31m[Kimprime_espacado[m[K(FILE *f, const int *v) {
+      |            [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:482:12:[m[K [01;36m[Knote: [m[Kprevious definition of ‘[01m[Kimprime_espacado[m[K’ with type ‘[01m[Kint(FILE *, const int *)[m[K’
+  482 | static int [01;36m[Kimprime_espacado[m[K(FILE *f, const int *v) {
+      |            [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:620:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kexecuta_requisicao[m[K’
+  620 | static void [01;31m[Kexecuta_requisicao[m[K(FILE *f, int c, const int *requisicao){
+      |             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:491:13:[m[K [01;36m[Knote: [m[Kprevious definition of ‘[01m[Kexecuta_requisicao[m[K’ with type ‘[01m[Kvoid(FILE *, int,  const int *)[m[K’
+  491 | static void [01;36m[Kexecuta_requisicao[m[K(FILE *f, int c, const int *requisicao) {
+      |             [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:491:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kexecuta_requisicao[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-function-Wunused-function]8;;[m[K]
+make: *** [Makefile:7: banker] Error 1
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make[K[K[K[Kmake clean
+[?2004lrm -f banker *.o
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -pedantic -O2 -o banker banker.c
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ ./banker 10 5 9[K7
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat result.txt[27mcat result.txt
+[?2004lAllocate to customer 0 the resources 0 2 1
+Allocate to customer 2 the resources 3 0 2
+Allocate to customer 1 the resources 2 0 0
+Allocate to customer 4 the resources 0 0 2
+Release from customer 0 the resources 0 1 1
+Allocate to customer 3 the resources 2 1 1
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 1 0       |   7 4 3 
+3 2 2     |   2 0 0       |   1 2 2 
+9 0 2     |   3 0 2       |   6 0 0 
+2 2 2     |   2 1 1       |   0 1 1 
+4 3 3     |   0 0 2       |   4 3 1 
+AVAILABLE 3 3 2 
+The resources 3 3 2 are not enough to customer 4 request 4 0 0 
+Allocate to customer 1 the resources 1 0 2
+The customer 0 request 0 2 0 was denied because result in an unsafe state
+The customer 2 request 0 1 0 was denied because exceed its maximum allocation
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat result.txt./banker 10 5 7[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat result.txt[Kexit
+[?2004lexit
+
+Script done on 2026-11-11 17:01:04-03:00 [COMMAND_EXIT_CODE="0"]
