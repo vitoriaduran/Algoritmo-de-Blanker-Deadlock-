@@ -289,3 +289,61 @@ The customer 2 request 0 1 0 was denied because exceed its maximum allocation
 [?2004lexit
 
 Script done on 2026-11-11 17:01:04-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-11 17:55:34-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="201" LINES="14"]
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ date
+[?2004lWed Nov 11 17:55:40 -03 2026
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ wg[Khoami
+[?2004lgabyv
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ pwd
+[?2004l/mnt/c/Users/gabyv/vgjda2
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mmkdir -p teste_limite[27mmkdir -p teste_limite
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > teste_limite/customer.txt[27m
+[7m10,5,7[27m
+[7mEOF[27m[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > teste_limite/customer.txt
+10,5,7
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > teste_limite/commands.txt[27m
+[7mRQ 0 10 5 7[27m
+[7m*[27m
+[7mRL 0 10 5 7[27m
+[7m*[27m
+[7mEOF[27m[A[A[A[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > teste_limite/commands.txt
+RQ 0 10 5 7
+*
+RL 0 10 5 7
+*
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcp banker teste_limite/[27mcp banker teste_limite/
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcd teste_limite[27mcd teste_limite
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2/teste_limite[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2/teste_limite[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2/teste_limite[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2/teste_limite[00m$ [7mcat result.txt[27mcat result.txt
+[?2004lAllocate to customer 0 the resources 10 5 7
+MAXIMUM   |   ALLOCATION  |   NEED
+10 5 7    |   10 5 7      |   0 0 0 
+AVAILABLE 0 0 0 
+Release from customer 0 the resources 10 5 7
+MAXIMUM   |   ALLOCATION  |   NEED
+10 5 7    |   0 0 0       |   10 5 7 
+AVAILABLE 10 5 7 
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2/teste_limite[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2/teste_limite[00m$ [7mcd ..[27mcd ..
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mmkdir -p teste_invalido[27mmkdir -p teste_invalido
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > teste_invalido/customer.txt[27m
+[7m3,2,2[27m
+[7mEOF[27m[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > teste_invalido/customer.txt
+3,2,2
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > teste_invalido/commands.txt[27m
+[7mRQ 0 4 2 2[27m
+[7mEOF[27m[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > teste_invalido/commands.txt
+RQ 0 4 2 2
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcp banker teste_invalido/[27mcp banker teste_invalido/
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcd teste_invalido[27mcd teste_invalido
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2/teste_invalido[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2/teste_invalido[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2/teste_invalido[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2/teste_invalido[00m$ [7mcat result.txt[27mcat result.txt
+[?2004lThe customer 0 request 4 2 2 was denied because exceed its maximum allocation
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2/teste_invalido[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2/teste_invalido[00m$ [7mcd ..[27mcd ..
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-11 18:00:29-03:00 [COMMAND_EXIT_CODE="0"]

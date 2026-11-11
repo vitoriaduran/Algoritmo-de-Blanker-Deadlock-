@@ -1,0 +1,8 @@
+Allocate to customer 0 the resources 10 5 7
+MAXIMUM   |   ALLOCATION  |   NEED
+10 5 7    |   10 5 7      |   0 0 0 
+AVAILABLE 0 0 0 
+Release from customer 0 the resources 10 5 7
+MAXIMUM   |   ALLOCATION  |   NEED
+10 5 7    |   0 0 0       |   10 5 7 
+AVAILABLE 10 5 7 
