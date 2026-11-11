@@ -69,4 +69,127 @@ Linha 3: Comando '*'
 [?2004l=== TESTANDO PARTE 1 E PARTE 2 ===
 [1] Lendo customer.txt...
 Erro: customer.txt linha 1: 3 coluna(s) encontrada(s), mas foram informados 2 recurso(s)
-[?2004h]0;gabyv@Vitria: /mnt/c/Users/g
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
+[?2004l=== TESTANDO PARTE 1 E PARTE 2 ===
+[1] Lendo customer.txt...
+    -> Sucesso! 5 clientes lidos.
+[2] Lendo commands.txt...
+Erro: commands.txt linha 1: cliente 9 nao existe
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ git add .
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ git commit -m ""[7madiciona leitura e validacao dos arquivos customer.txt e commands.txt[27m"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadiciona leitura e validacao dos arquivos customer.txt e commands.txt[C[C[C[1@n[1@d[1@o[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[main 439d5d4] adicionando leitura e validacao dos arquivos customer.txt e commands.txt
+ 5 files changed, 389 insertions(+), 9 deletions(-)
+ create mode 100644 banker
+ create mode 100644 commands.txt
+ create mode 100644 customer.txt
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ git o[Kpush origin main
+[?2004lEnumerating objects: 10, done.
+Counting objects:  10% (1/10)Counting objects:  20% (2/10)Counting objects:  30% (3/10)Counting objects:  40% (4/10)Counting objects:  50% (5/10)Counting objects:  60% (6/10)Counting objects:  70% (7/10)Counting objects:  80% (8/10)Counting objects:  90% (9/10)Counting objects: 100% (10/10)Counting objects: 100% (10/10), done.
+Delta compression using up to 12 threads
+Compressing objects:  20% (1/5)Compressing objects:  40% (2/5)Compressing objects:  60% (3/5)Compressing objects:  80% (4/5)Compressing objects: 100% (5/5)Compressing objects: 100% (5/5), done.
+Writing objects:  14% (1/7)Writing objects:  28% (2/7)Writing objects:  42% (3/7)Writing objects:  57% (4/7)Writing objects:  71% (5/7)Writing objects:  85% (6/7)Writing objects: 100% (7/7)Writing objects: 100% (7/7), 12.23 KiB | 139.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/vitoriaduran/Algoritmo-de-Blanker-Deadlock-
+   d987307..439d5d4  main -> main
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-10 15:08:59-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-10 15:32:27-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="172" LINES="14"]
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ date
+[?2004lTue Nov 10 15:32:31 -03 2026
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ wg[Khoami
+[?2004lgabyv
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ pwd
+[?2004l/mnt/c/Users/gabyv/vgjda2
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > customer.txt[27m
+[7m5,5,5[27m
+[7mEOF[27m[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > customer.txt
+5,5,5
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat << 'EOF' > commands.txt[27m
+[7mRQ 0 4 4 4[27m
+[7m*[27m
+[7mEOF[27m[A[A[A]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ cat << 'EOF' > commands.txt
+RQ 0 4 4 4
+*
+EOF
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7m./banker 5 5 5[27m./banker 5 5 5
+[?2004l=== TESTANDO PARTE 1 E PARTE 2 ===
+[1] Lendo customer.txt...
+    -> Sucesso! 1 clientes lidos.
+[2] Lendo commands.txt...
+    -> Sucesso! 2 comandos lidos.
+
+--- Resumo dos Comandos Reconhecidos ---
+Linha 1: Comando RQ | Cliente: 0 | Recursos: 4 4 4
+Linha 2: Comando '*'
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat result.txt[27mcat result.txt
+[?2004lcat: result.txt: No such file or directory
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make clean
+[?2004lrm -f banker *.o
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -pedantic -O2 -o banker banker.c
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7m./banker 5 5 5[27m./banker 5 5 5
+[?2004l[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [7mcat result.txt[27mcat result.txt
+[?2004lThe customer 0 request 4 4 4 was denied because exceed its maximum allocation
+MAXIMUM   |   ALLOCATION  |   NEED
+5 5 5     |   0 0 0       |   0 0 0 
+AVAILABLE 5 5 5 
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-10 15:44:30-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-11 14:45:29-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="182" LINES="33"]
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ f[Kdaye[K[Kte
+[?2004lWed Nov 11 14:45:34 -03 2026
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ whoami
+[?2004lgabyv
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ pwd
+[?2004l/mnt/c/Users/gabyv/vgjda2
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make clean
+[?2004lrm -f banker *.o
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -pedantic -O2 -o banker banker.c
+[01m[Kbanker.c:[m[K In function ‘[01m[Kexecuta_requisicao[m[K’:
+[01m[Kbanker.c:481:13:[m[K [01;31m[Kerror: [m[Kimplicit declaration of function ‘[01m[Kimprime_unido[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+  481 |             [01;31m[Kimprime_unido[m[K(f, requisicao);
+      |             [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:493:13:[m[K [01;31m[Kerror: [m[Kimplicit declaration of function ‘[01m[Kimprime_espacado[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+  493 |             [01;31m[Kimprime_espacado[m[K(f, requisicao);
+      |             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:[m[K At top level:
+[01m[Kbanker.c:472:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kexecuta_requisicao[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-function-Wunused-function]8;;[m[K]
+  472 | static void [01;35m[Kexecuta_requisicao[m[K(FILE *f, int c, const int *requisicao) {
+      |             [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[Kbanker.c:320:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kler_comandos[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-function-Wunused-function]8;;[m[K]
+  320 | static void [01;35m[Kler_comandos[m[K(void) {
+      |             [01;35m[K^~~~~~~~~~~~[m[K
+[01m[Kbanker.c:203:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kler_clientes[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-function-Wunused-function]8;;[m[K]
+  203 | static void [01;35m[Kler_clientes[m[K(void){
+      |             [01;35m[K^~~~~~~~~~~~[m[K
+make: *** [Makefile:7: banker] Error 1
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make clen[Kan
+[?2004lrm -f banker *.o
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -pedantic -O2 -o banker banker.c
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ ./bamke[K[K[Knjer[K[K[Kker
+[?2004l=== INICIANDO TESTE ISOLADO DA PARTE 3 ===
+[FALHA] Estado inicial: INSEGURO.
+
+Executando requisicao via executa_requisicao...
+The customer 0 request 1 0 2 was denied because result in an unsafe state
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ [K]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make clean
+[?2004lrm -f banker *.o
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -pedantic -O2 -o banker banker.c
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ ./banker
+[?2004l=== INICIANDO TESTE ISOLADO DA PARTE 3 ===
+[OK] Estado inicial: SEGURO (Necessidade inicial copiada corretamente).
+
+Executando requisicao via executa_requisicao...
+Allocate to customer 0 the resources 1 0 2
+[?2004h]0;gabyv@Vitria: /mnt/c/Users/gabyv/vgjda2[01;32mgabyv@Vitria[00m:[01;34m/mnt/c/Users/gabyv/vgjda2[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-11 14:54:03-03:00 [COMMAND_EXIT_CODE="0"]

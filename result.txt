@@ -1,0 +1,4 @@
+The customer 0 request 4 4 4 was denied because exceed its maximum allocation
+MAXIMUM   |   ALLOCATION  |   NEED
+5 5 5     |   0 0 0       |   0 0 0 
+AVAILABLE 5 5 5 

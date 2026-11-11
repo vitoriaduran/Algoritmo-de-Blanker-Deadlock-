@@ -409,48 +409,136 @@ static void ler_comandos(void) {
     fechar_entrada(); 
 }
 
-//MAIN TEMPORARIO
-int main(int argc, char *argv[]) {
-    atexit(limpa_recursos);
-
-    if (argc < 2) {
-        morrer("Uso: %s <r1> <r2> ... <rn>", argv[0]);
-    }
-
-    // Lê a quantidade de recursos informada via CLI
-    banco.num_recursos = argc - 1;
-    banco.disponivel = aloca_zero((size_t)banco.num_recursos, sizeof(int));
-    for (int j = 0; j < banco.num_recursos; j++) {
-        if (converte_nao_negativo(argv[j + 1], strlen(argv[j + 1]), &banco.disponivel[j]) != 0) {
-            morrer("Recurso %d invalido", j + 1);
-        }
-    }
-
-    printf("=== TESTANDO PARTE 1 E PARTE 2 ===\n");
+//Algoritmo de Banker (Segurança)
+static void inicializa_banco(void) {
+    const size_t celulas = (size_t)banco.num_clientes * (size_t)banco.num_recursos;
+    banco.alocacao =  aloca_zero(celulas, sizeof(int));
+    banco.necessidade= aloca_zero(celulas, sizeof(int));
+    banco.trabalho = aloca_zero((size_t)banco.num_recursos, sizeof ( int ));
+    banco.finalizado = aloca_zero((size_t)banco.num_clientes, sizeof ( char ));
     
-    printf("[1] Lendo customer.txt...\n");
-    ler_clientes();
-    printf("    -> Sucesso! %d clientes lidos.\n", banco.num_clientes);
+    //copia a matriz de demanda maxima para a matriz de necessidade inicial
+    memcpy(banco.necessidade, banco.maximo, celulas * sizeof ( int )); 
+    
 
-    printf("[2] Lendo commands.txt...\n");
-    ler_comandos();
-    printf("    -> Sucesso! %zu comandos lidos.\n", num_comandos);
+}
 
-    printf("\n--- Resumo dos Comandos Reconhecidos ---\n");
-    for (size_t i = 0; i < num_comandos; i++) {
-        if (comandos[i].tipo == TIPO_ESTADO) {
-            printf("Linha %ld: Comando '*'\n", comandos[i].linha);
-        } else {
-            printf("Linha %ld: Comando %s | Cliente: %d | Recursos:", 
-                   comandos[i].linha,
-                   comandos[i].tipo == TIPO_RQ ? "RQ" : "RL", 
-                   comandos[i].cliente);
-            for (int j = 0; j < banco.num_recursos; j++) {
-                printf(" %d", comandos[i].quantidade[j]);
+//verifica se o estado atual é seguro(nenhum cliente é deadlock)
+static int esta_seguro(void) {
+    const int n = banco.num_clientes;
+    const int m = banco.num_recursos;
+    int finalizados = 0;
+    int progresso = 1;
+    
+    //reseta o vetor trabalho com os recursos disponiveis atuais
+    memcpy(banco.trabalho, banco.disponivel, (size_t)m * sizeof(int));
+    memset(banco.finalizado, 0, (size_t)n);
+
+    while (progresso) {
+        progresso = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            const int *necessidade = obter_linha(banco.necessidade, i);
+            const int *alocacao = obter_linha(banco.alocacao, i);
+            int ok = 1;
+
+            if (banco.finalizado[i]) {
+                continue;
             }
-            printf("\n");
+            for (int j = 0; j < m && ok; j++) {
+
+                if (necessidade[j] > banco.trabalho[j]) {
+                    ok = 0;
+                }
+            }
+            if (!ok) {
+                continue;
+            }
+
+            for (int j = 0; j < m; j++) {
+
+                banco.trabalho[j] += alocacao[j];
+            }
+            banco.finalizado[i] = 1;
+            finalizados++;
+            progresso = 1;
+        }
+    }
+    return finalizados == n;
+}
+
+static void imprime_unido(FILE *f, const int *v) {
+    for (int j = 0; j < banco.num_recursos; j++) {
+        if (j == 0) {
+            fprintf(f, "%d", v[j]);
+        } else {
+            fprintf(f, " %d", v[j]);
+        }
+    }
+}
+
+static int imprime_espacado(FILE *f, const int *v) {
+    int impressos = 0;
+    for (int j = 0; j < banco.num_recursos; j++) {
+        impressos += fprintf(f, "%d ", v[j]);
+    }
+    return impressos;
+}
+
+//Processa o comando RQ aplicando as 4 estapas estritas do algoritmo do banqueiro
+static void executa_requisicao(FILE *f, int c, const int *requisicao) {
+    const int m = banco.num_recursos;
+    int *necessidade = obter_linha(banco.necessidade, c);
+    int *alocacao = obter_linha(banco.alocacao, c);
+
+    //Valida se a requisição não ultrapassa a necessidade declarada
+    for (int j = 0; j < m; j++) {
+        if (requisicao[j] > necessidade[j]) {
+            fprintf(f, "The customer %d request ", c);
+            imprime_unido(f, requisicao);
+            fputs(" was denied because exceed its maximum allocation\n", f);
+            return;
         }
     }
 
-    return 0;
+    //Valida se há recursos disponíveis no momento
+    for (int j = 0; j < m; j++) {
+        if (requisicao[j] > banco.disponivel[j]) {
+            fputs("The resources ", f);
+            imprime_unido(f, banco.disponivel);
+            fprintf(f, " are not enough to customer %d request ", c);
+            imprime_espacado(f, requisicao);
+            fputc('\n', f);
+            return;
+        }
+    }
+
+    //alocação hipotética
+    for (int j = 0; j < m; j++) {
+        banco.disponivel[j] -= requisicao[j];
+        alocacao[j] += requisicao[j];
+        necessidade[j] -= requisicao[j];
+    }
+
+    //teste de segurança
+    if (esta_seguro()) {
+        fprintf(f, "Allocate to customer %d the resources ", c);
+        imprime_unido(f, requisicao);
+        fputc('\n', f);
+        return;
+    }
+
+    //rollback:desfaz a alocação caso o estado resultante seja inseguro
+    for (int j = 0; j < m; j++) {
+        banco.disponivel[j] += requisicao[j];
+        alocacao[j] -= requisicao[j];
+        necessidade[j] += requisicao[j];
+    }
+
+    fprintf(f, "The customer %d request ", c);
+    imprime_unido(f, requisicao);
+    fputs(" was denied because result in an unsafe state\n", f);
 }
+
+
