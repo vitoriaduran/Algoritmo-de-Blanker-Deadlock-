@@ -2,7 +2,7 @@
  
 Implementação do algoritmo de Banker (Silberschatz et al., *Operating System Concepts*, 10ª ed., p. P-45). O número de recursos vem da linha de comando e o número de clientes vem de `customer.txt`. Os comandos são lidos de `commands.txt` e o resultado é gravado em `result.txt`.
  
-Autora: Vitória Gabrielle Janeiro Duran (vgjda2)
+Aluna: Vitória Gabrielle Janeiro Duran (vgjda2)
  
 ## Arquivos
  
@@ -11,7 +11,7 @@ Autora: Vitória Gabrielle Janeiro Duran (vgjda2)
 | `banker.c` | código-fonte completo |
 | `Makefile` | `make` gera o executável `banker`; `make clean` remove os arquivos compilados |
 | `evidencias.log` | gravação (`script -a`) das compilações e execuções, com casos válidos, limite e inválidos |
-| `relatorio.pdf` | relatório da entrega |
+| `vgjda2.pdf` | relatório da entrega |
  
 ## Compilar e executar
  
